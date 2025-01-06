@@ -1,6 +1,7 @@
 import { Shape } from "./shape";
 
 export class Rectangle extends Shape{
+    
 
     constructor(private theX:number , private theY:number,private _height:number, private _width:number,){
         super(theX,theY);
@@ -25,5 +26,10 @@ export class Rectangle extends Shape{
     getInfo(): string {
         return super.getInfo() + `, width = ${this._width}, length = ${this._height}`;
     }
+
+    calculateArea(): number {
+        return this._width * this._height;
+    }
+
 
 }

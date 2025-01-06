@@ -1,4 +1,4 @@
-export class Shape {
+export abstract class Shape {
 
     //This is how it define and assigns the variables.
 
@@ -24,4 +24,8 @@ export class Shape {
     getInfo():string{
         return ` x=${this._x} y=${this._y}.`
     }
+
+    //Abstract functions.
+    abstract calculateArea():number;
+    
 }

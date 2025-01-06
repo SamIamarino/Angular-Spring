@@ -1,0 +1,23 @@
+<p>sales-person-list works!</p>
+
+<table border="1">
+    <thead>
+        <tr>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Email</td>
+            <td>Sales Volume</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        @for (tempSalesPerson of salesPersonList; track $index) {
+            <tr>
+                <td>{{ tempSalesPerson.firstName }}</td>
+                <td>{{ tempSalesPerson.lastName }}</td>
+                <td>{{ tempSalesPerson.email }}</td>
+                <td>{{ tempSalesPerson.salesVolume }}</td>
+            </tr>
+        }
+    </tbody>
+</table>

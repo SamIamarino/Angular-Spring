@@ -2,8 +2,6 @@ import { Shape } from "./shape";
 
 export class Circle extends Shape{
 
-
-
     constructor(private theX: number, private theY: number, private _radius:number){
         //Calling the 
         super(theX,theY);
@@ -20,6 +18,10 @@ export class Circle extends Shape{
 
     getInfo(): string {
         return super.getInfo() + `, radius = ${this._radius}`;
+    }
+
+    calculateArea(): number {
+        return Math.PI * Math.pow(this._radius,2);
     }
 
 
