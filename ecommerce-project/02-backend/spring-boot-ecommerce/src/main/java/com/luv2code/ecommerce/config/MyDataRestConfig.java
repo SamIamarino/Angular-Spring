@@ -1,6 +1,5 @@
 package com.luv2code.ecommerce.config;
 
-
 import com.luv2code.ecommerce.entity.Product;
 import com.luv2code.ecommerce.entity.ProductCategory;
 import org.springframework.context.annotation.Configuration;
@@ -15,20 +14,19 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
     @Override
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
 
-        HttpMethod[] unsupportedActions = {HttpMethod.DELETE, HttpMethod.PUT, HttpMethod.POST};
+        HttpMethod[] theUnsupportedActions = {HttpMethod.PUT, HttpMethod.POST, HttpMethod.DELETE, HttpMethod.PATCH};
 
-        // Disable HTTP methods for Product
+        // disable HTTP methods for Product: PUT, POST, DELETE and PATCH
         config.getExposureConfiguration()
                 .forDomainType(Product.class)
-                .withItemExposure((metadata, httpMethods) -> httpMethods.disable(unsupportedActions))
-                .withCollectionExposure((metadata, httpMethods) -> httpMethods.disable(unsupportedActions));
+                .withItemExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions))
+                .withCollectionExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions));
 
-        // Disable HTTP methods for ProductCategory
+        // disable HTTP methods for ProductCategory: PUT, POST, DELETE and PATCH
         config.getExposureConfiguration()
                 .forDomainType(ProductCategory.class)
-                .withItemExposure((metadata, httpMethods) -> httpMethods.disable(unsupportedActions))
-                .withCollectionExposure((metadata, httpMethods) -> httpMethods.disable(unsupportedActions));
+                .withItemExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions))
+                .withCollectionExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions));
 
-        RepositoryRestConfigurer.super.configureRepositoryRestConfiguration(config, cors);
     }
 }
