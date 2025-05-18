@@ -1,7 +1,7 @@
 <h1 align="center">Angular‑Spring e‑Commerce</h1>
 
 <p align="center">
-  <img src="docs/fotosReadme (1).png" width="400"/>
+  <img src="docs/fotosReadme (1).png" width="800" height="600"/>
 </p>
 
 Repositório dedicado a estudos práticos de **Angular** (frontend) e **Spring Boot** (backend), construindo passo a passo um mini e‑commerce completo.
